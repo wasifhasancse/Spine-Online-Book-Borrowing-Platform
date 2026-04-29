@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Story"
+  },
+  {
+    "id": 2,
+    "name": "Tech"
+  },
+  {
+    "id": 3,
+    "name": "Science"
+  },
+  {
+    "id": 4,
+    "name": "Mystery"
+  },
+  {
+    "id": 5,
+    "name": "Poetry"
+  },
+  {
+    "id": 6,
+    "name": "History"
+  },
+  {
+    "id": 7,
+    "name": "Biography"
+  },
+  {
+    "id": 8,
+    "name": "Philosophy"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "description": "A classic novel of family, manners, and the changing relationship between Elizabeth Bennet and Mr. Darcy.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A widely read software book focused on writing maintainable, readable, and professional code.",
+    "category": "Tech",
+    "available_quantity": 12,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A philosophical story about a shepherd's journey to pursue purpose, meaning, and personal destiny.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 4,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt and David Thomas",
+    "description": "A practical guide to software craftsmanship, problem solving, and long-term technical growth.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
+    "rating": 4.9
+  },
+  {
+    "id": 5,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "An accessible exploration of cosmology, black holes, time, and the structure of the universe.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A powerful story of justice, conscience, and growing up in the racially divided American South.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
+    "rating": 4.9
+  },
+  {
+    "id": 7,
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "description": "A modern systems book about data architecture, distributed systems, reliability, and scalability.",
+    "category": "Tech",
+    "available_quantity": 10,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "A science classic that connects astronomy, evolution, history, and human curiosity in one broad narrative.",
+    "category": "Science",
+    "available_quantity": 11,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 9,
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "description": "A dramatic novel about friendship, guilt, exile, and redemption across decades of Afghan history.",
+    "category": "Story",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "A landmark popular science book explaining evolution through the lens of genes and natural selection.",
+    "category": "Science",
+    "available_quantity": 13,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780192860927-L.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein",
+    "description": "A foundational textbook covering algorithm design, analysis, and essential computer science techniques.",
+    "category": "Tech",
+    "available_quantity": 14,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780262046305-L.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 12,
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "description": "A literary classic following Jane's moral and emotional journey toward independence and belonging.",
+    "category": "Story",
+    "available_quantity": 9,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
+    "rating": 4.6
+  }
+]

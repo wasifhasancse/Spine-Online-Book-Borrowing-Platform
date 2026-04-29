@@ -41,36 +41,38 @@ const Footer = () => {
               book borrowing platform.
             </p>
             <div>
-              <h3 className="text-base font-semibold text-gray-900">Contact Us</h3>
+              <h3 className="text-base font-semibold text-gray-900">
+                Contact Us
+              </h3>
               <ul className="space-y-2 text-sm text-gray-700 pt-1">
-              <li className="flex items-center gap-2">
-                <MdEmail className="text-[#2f5f52]" aria-hidden="true" />
-                <a
-                  href="mailto:support@spinebooks.com"
-                  className="hover:text-[#2f5f52] transition-colors"
-                >
-                  support@spinebooks.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MdPhone className="text-[#2f5f52]" aria-hidden="true" />
-                <a
-                  href="tel:+8801712345678"
-                  className="hover:text-[#2f5f52] transition-colors"
-                >
-                  +880 1712-345678
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MdLocationOn className="text-[#2f5f52]" aria-hidden="true" />
-                Dhanmondi, Dhaka, Bangladesh
-              </li>
-            </ul>
+                <li className="flex items-center gap-2">
+                  <MdEmail className="text-[#2f5f52]" aria-hidden="true" />
+                  <a
+                    href="mailto:support@spinebooks.com"
+                    className="hover:text-[#2f5f52] transition-colors"
+                  >
+                    support@spinebooks.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MdPhone className="text-[#2f5f52]" aria-hidden="true" />
+                  <a
+                    href="tel:+8801712345678"
+                    className="hover:text-[#2f5f52] transition-colors"
+                  >
+                    +880 1712-345678
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MdLocationOn className="text-[#2f5f52]" aria-hidden="true" />
+                  Dhanmondi, Dhaka, Bangladesh
+                </li>
+              </ul>
             </div>
           </div>
 
           <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-5">
-            <div className="space-y-4">
+            <div className="space-y-4 text-right">
               <h3 className="text-base font-semibold text-gray-900">Product</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 {productLinks.map((item) => (
@@ -86,7 +88,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-right">
               <h3 className="text-base font-semibold text-gray-900">Company</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 {companyLinks.map((item) => (
@@ -102,7 +104,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-right">
               <h3 className="text-base font-semibold text-gray-900">Support</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 {supportLinks.map((item) => (
