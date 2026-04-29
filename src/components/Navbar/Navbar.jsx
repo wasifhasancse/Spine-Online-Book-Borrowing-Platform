@@ -12,10 +12,10 @@ const navLinks = [
   { label: "My Profile", href: "/profile", icon: <FaUserAlt /> },
 ];
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-11/12 items-center justify-between">
+      <div className="mx-auto h-16 max-w-11/12 flex items-center justify-between">
         <div className="flex items-center justify-center gap-2">
           <Hamburger navLinks={navLinks} className="md:hidden" />
           <Link
@@ -47,4 +47,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
