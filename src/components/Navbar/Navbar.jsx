@@ -27,7 +27,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="hidden items-center gap-1 sm:flex">
+        <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((navItems, index) => (
             <NavLink key={index} navItems={navItems} />
           ))}

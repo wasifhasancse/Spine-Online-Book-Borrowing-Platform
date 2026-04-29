@@ -8,7 +8,7 @@ const Hamburger = ({ navLinks }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative sm:hidden">
+    <div className="relative md:hidden">
       <button
         className="rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors flex items-center justify-center"
         onClick={() => setMenuOpen((prev) => !prev)}
