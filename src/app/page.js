@@ -10,7 +10,7 @@ const Home = async () => {
       <section>
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-900 sm:text-sm">
-            Library
+            Book
           </p>
           <h1 className="mt-3 text-3xl font-extrabold text-emerald-500 sm:text-4xl">
             Featured Books
