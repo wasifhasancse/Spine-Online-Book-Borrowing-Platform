@@ -6,7 +6,7 @@ const Home = async () => {
   );
   const booksData = await response.json();
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen py-14">
       <section>
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-900 sm:text-sm">
@@ -20,9 +20,9 @@ const Home = async () => {
             and technology titles.
           </p>
         </div>
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {booksData.slice(0, 4).map((book) => (
-            <BookCard key={book.id} />
+            <BookCard key={book.id} book={book} />
           ))}
         </div>
       </section>
