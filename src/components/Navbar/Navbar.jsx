@@ -1,27 +1,31 @@
-import Link from "next/link";
-import NavLink from "./NavLink";
-import { FaUserAlt } from "react-icons/fa";
-import { IoBook, IoHomeSharp } from "react-icons/io5";
-import { GiBookCover } from "react-icons/gi";
 import Image from "next/image";
+import Link from "next/link";
+import { FaUserAlt } from "react-icons/fa";
+import { GiBookCover } from "react-icons/gi";
+import { IoBook, IoHomeSharp } from "react-icons/io5";
+import Hamburger from "./Hamburger";
+import NavLink from "./NavLink";
 
 const navLinks = [
   { label: "Home", href: "/", icon: <IoHomeSharp /> },
-  { label: "All Books", href: "/books", icon: <IoBook /> },
+  { label: "All Books", href: "/all-books", icon: <IoBook /> },
   { label: "My Profile", href: "/profile", icon: <FaUserAlt /> },
 ];
 
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-11/12 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-2xl font-bold tracking-tight text-indigo-600 hover:text-indigo-500"
-        >
-          <GiBookCover />
-          Spine
-        </Link>
+      <div className="mx-auto flex h-16 max-w-11/12 items-center justify-between">
+        <div className="flex items-center justify-center gap-2">
+          <Hamburger navLinks={navLinks} className="md:hidden" />
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-2xl font-bold tracking-tight text-indigo-600 hover:text-indigo-500"
+          >
+            <GiBookCover />
+            Spine
+          </Link>
+        </div>
 
         <ul className="hidden items-center gap-1 sm:flex">
           {navLinks.map((navItems, index) => (
