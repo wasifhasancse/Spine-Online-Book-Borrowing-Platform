@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { GiBookCover } from "react-icons/gi";
 import { IoBook, IoHomeSharp } from "react-icons/io5";
 import Hamburger from "./Hamburger";
 import NavLink from "./NavLink";
+import SignInButton from "./SignInButton";
 
 const navLinks = [
   { label: "Home", href: "/", icon: <IoHomeSharp /> },
@@ -34,15 +34,7 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-indigo-200">
-            <Image
-              src="https://img.icons8.com/color/1200/user.jpg"
-              alt="User avatar"
-              className="h-full w-full object-cover"
-              height={200}
-              width={200}
-            />
-          </div>
+          <SignInButton/>
         </div>
       </div>
     </nav>
