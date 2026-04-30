@@ -6,7 +6,7 @@ const Home = async () => {
   );
   const booksData = await response.json();
   return (
-    <div className="min-h-screen py-14">
+    <div className="min-h-screen py-14 space-y-14 md:space-y-32">
       <section>
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-900 sm:text-sm">
@@ -26,6 +26,7 @@ const Home = async () => {
           ))}
         </div>
       </section>
+     
     </div>
   );
 };
