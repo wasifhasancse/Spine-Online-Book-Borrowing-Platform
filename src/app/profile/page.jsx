@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center space-y-10 py-14">
+    <div className="mx-auto max-w-10/12 flex min-h-screen flex-col items-center justify-center space-y-10 py-14">
       <div className="relative h-30 w-30 overflow-hidden rounded-full ring-2 ring-[#93c5fd]">
         <Image
           src="https://img.icons8.com/color/1200/user.jpg"

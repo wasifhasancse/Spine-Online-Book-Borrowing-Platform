@@ -5,7 +5,7 @@ const AllBooks = async () => {
   const booksData = await galleryData();
   const categoriesData = await categoryData();
   return (
-    <div className="min-h-screen py-14">
+    <div className="min-h-screen py-14 mx-auto max-w-10/12">
       <section>
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#0f3d66] md:text-sm">

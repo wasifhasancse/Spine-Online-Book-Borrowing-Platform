@@ -1,5 +1,6 @@
 import BookCard from "@/components/Book/BookCard";
 import AnnouncementMarquee from "@/components/Home/AnnouncementMarquee";
+import Banner from "@/components/Home/Banner";
 import { galleryData } from "@/localdb/localdb";
 import Link from "next/link";
 
@@ -53,10 +54,11 @@ const Home = async () => {
     .slice(0, 3);
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-7xl space-y-12 px-3 py-10 md:space-y-16 md:px-4 md:py-12 lg:space-y-20 lg:px-6 lg:py-14">
+    <div className="mx-auto min-h-screen space-y-12 px-3 py-10 md:space-y-16 md:px-4 md:py-12 lg:space-y-20 lg:px-6 lg:py-14">
+      <Banner />
       <AnnouncementMarquee items={marqueeItems} />
 
-      <section className="space-y-8 md:space-y-10">
+      <section className="mx-auto max-w-10/12 space-y-8 md:space-y-10">
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#0f3d66] md:text-sm">
             Book
@@ -68,14 +70,6 @@ const Home = async () => {
             Find your next read from our full collection of stories, science,
             and technology titles.
           </p>
-          <div className="mt-6 flex justify-center">
-            <Link
-              href="/all-books"
-              className="rounded-xl bg-[#1f5d99] px-5 py-2 text-sm font-semibold text-[#eaf4ff] transition hover:bg-[#0f3d66] active:bg-[#0b2d4d] md:px-6 md:py-3 md:text-base"
-            >
-              Browse Full Library
-            </Link>
-          </div>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {featuredBooks.map((book) => (
@@ -84,7 +78,7 @@ const Home = async () => {
         </div>
       </section>
 
-      <section className="space-y-8 md:space-y-10">
+      <section className="mx-auto max-w-10/12 space-y-8 md:space-y-10">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#0f3d66] md:text-sm">
             Top Picks
@@ -104,7 +98,7 @@ const Home = async () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-3xl border border-[#9ac5ee] bg-[#f2f8ff]/95 p-4 shadow-xl shadow-[#1f5d9917] md:p-7 lg:p-10">
+      <section className="mx-auto max-w-10/12 relative overflow-hidden rounded-3xl border border-[#9ac5ee] bg-[#f2f8ff]/95 p-4 shadow-xl shadow-[#1f5d9917] md:p-7 lg:p-10">
         <div className="absolute left-0 top-0 -z-10 h-full w-full bg-linear-to-r from-[#d9f2ea40] via-[#f4f8ff5c] to-[#f7efe640]" />
 
         <div className="mx-auto max-w-3xl text-center">
@@ -142,7 +136,7 @@ const Home = async () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-8">
+      <section className="mx-auto max-w-10/12 grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-8">
         <div className="rounded-3xl border border-[#9ac5ee] bg-[#edf5ff]/95 p-5 shadow-xl shadow-[#1f5d991f] md:p-6 lg:p-8">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0f3d66] md:text-sm">
             Shelf Alerts

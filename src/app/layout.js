@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full bg-linear-to-r from-[#e6f4ff] to-[#c7e3ff] text-[#0f3d66] ">
         <Navbar />
-        <main className="mx-auto max-w-10/12">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
