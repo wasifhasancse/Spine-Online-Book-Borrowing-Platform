@@ -1,15 +1,9 @@
 import BookCard from "@/components/Book/BookCard";
+import { categoryData, galleryData } from "@/localdb/localdb";
 
 const AllBooks = async () => {
-  const response = await fetch(
-    "https://spinebookborrowing.vercel.app/bookData.json",
-  );
-  const booksData = await response.json();
-
-  const categoriesResponse = await fetch(
-    "https://spinebookborrowing.vercel.app/bookCategory.json",
-  );
-  const categoriesData = await categoriesResponse.json();
+  const booksData = await galleryData();
+  const categoriesData = await categoryData();
   return (
     <div className="min-h-screen py-14">
       <section>

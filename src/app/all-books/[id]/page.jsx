@@ -1,11 +1,9 @@
+import { galleryData } from "@/localdb/localdb";
 import Image from "next/image";
 
 const BookDetails = async ({ params }) => {
   const { id } = await params;
-  const response = await fetch(
-    "https://spinebookborrowing.vercel.app/bookData.json",
-  );
-  const booksData = await response.json();
+  const booksData = await galleryData();
   const book = booksData.find((book) => book.id == id);
 
   return (
