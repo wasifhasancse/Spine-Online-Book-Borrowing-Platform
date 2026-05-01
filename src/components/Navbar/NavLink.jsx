@@ -12,8 +12,8 @@ const NavLink = ({ navItems, onClick }) => {
         onClick={onClick}
         className={`rounded-md px-4 py-2 text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
           isActive
-            ? "bg-indigo-50 text-indigo-600"
-            : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+            ? "bg-[#0f3d66] text-[#eaf4ff]"
+            : "text-[#1f5d99] hover:bg-[#93c5fd40] hover:text-[#0f3d66] active:bg-[#1f5d99] active:text-[#eaf4ff]"
         }`}
       >
         {navItems.icon} {navItems.label}
