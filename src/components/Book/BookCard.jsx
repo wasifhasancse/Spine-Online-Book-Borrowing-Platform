@@ -40,7 +40,7 @@ const BookCard = ({ book }) => {
         </Chip>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-4 md:p-5 lg:p-6">
         <div className="mb-4 flex min-h-8 items-center justify-between gap-2 text-sm">
           <p className="min-w-0 truncate text-[#1f5d99]">
             by <span className="font-semibold text-[#0f3d66]">{author}</span>

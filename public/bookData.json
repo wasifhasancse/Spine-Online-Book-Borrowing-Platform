@@ -61,12 +61,12 @@
   },
   {
     "id": 7,
-    "title": "Designing Data-Intensive Applications",
+    "title": "Beyond the Ocean Door",
     "author": "Martin Kleppmann",
     "description": "A modern systems book about data architecture, distributed systems, reliability, and scalability.",
     "category": "Tech",
     "available_quantity": 10,
-    "image_url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg",
+    "image_url": "https://blog-cdn.reedsy.com/directories/gallery/248/large_65b0ae90317f7596d6f95bfdd6131398.jpg",
     "rating": 4.8
   },
   {
