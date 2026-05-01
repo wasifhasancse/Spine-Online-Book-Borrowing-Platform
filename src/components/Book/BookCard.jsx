@@ -58,13 +58,13 @@ const BookCard = ({ book }) => {
           {description}
         </p>
 
-        <div className="mt-4 grid min-h-16 grid-cols-[1fr_auto] items-center gap-3 border-t border-[#9ac5ee] pt-4">
+        <div className="mt-4 grid min-h-16 grid-cols-1 gap-3 border-t border-[#9ac5ee] pt-4 md:grid-cols-2 md:items-center">
           <p className="text-sm font-semibold leading-tight text-[#1f5d99]">
             Ready to borrow
           </p>
           <Link
             href={`/all-books/${id}`}
-            className="inline-flex h-12 items-center rounded-lg bg-[#1f5d99] px-4 text-sm font-semibold text-[#eaf4ff] transition hover:bg-[#0f3d66] active:bg-[#0b2d4d]"
+            className="inline-flex h-12 items-center justify-center rounded-lg bg-[#1f5d99] px-4 text-sm font-semibold text-[#eaf4ff] transition hover:bg-[#0f3d66] active:bg-[#0b2d4d] md:justify-self-end"
           >
             View Book Details
           </Link>

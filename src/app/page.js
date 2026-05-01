@@ -1,4 +1,5 @@
 import BookCard from "@/components/Book/BookCard";
+import AnnouncementMarquee from "@/components/Home/AnnouncementMarquee";
 import { galleryData } from "@/localdb/localdb";
 import Link from "next/link";
 
@@ -36,6 +37,12 @@ const journeyHighlights = [
 const Home = async () => {
   const booksData = await galleryData();
 
+  const marqueeItems = [
+    ...booksData.slice(0, 6).map((book) => `New Arrivals: ${book.title}`),
+    "Special Discount on Memberships: Save up to 20% this month",
+    "Weekend Offer: Borrow 2 books and get 1 bonus reservation",
+  ];
+
   const featuredBooks = booksData.slice(0, 4);
   const popularBooks = [...booksData]
     .sort((a, b) => Number(b.rating) - Number(a.rating))
@@ -47,6 +54,8 @@ const Home = async () => {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-7xl space-y-12 px-3 py-10 md:space-y-16 md:px-4 md:py-12 lg:space-y-20 lg:px-6 lg:py-14">
+      <AnnouncementMarquee items={marqueeItems} />
+
       <section className="space-y-8 md:space-y-10">
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#0f3d66] md:text-sm">
@@ -68,7 +77,7 @@ const Home = async () => {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {featuredBooks.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
@@ -88,7 +97,7 @@ const Home = async () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {popularBooks.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
@@ -108,7 +117,7 @@ const Home = async () => {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 md:gap-5 lg:grid-cols-2 lg:gap-6 xl:grid-cols-4">
           {journeyHighlights.map((item) => (
             <article
               key={item.id}
@@ -120,7 +129,7 @@ const Home = async () => {
                 >
                   {item.id}
                 </div>
-                <h3 className="text-lg font-bold leading-snug text-[#0f3d66] md:text-xl lg:text-2xl">
+                <h3 className="text-lg font-bold leading-snug text-[#0f3d66] md:text-xl lg:text-xl xl:text-2xl">
                   {item.title}
                 </h3>
               </div>
@@ -133,7 +142,7 @@ const Home = async () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-8">
+      <section className="grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-8">
         <div className="rounded-3xl border border-[#9ac5ee] bg-[#edf5ff]/95 p-5 shadow-xl shadow-[#1f5d991f] md:p-6 lg:p-8">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0f3d66] md:text-sm">
             Shelf Alerts
@@ -144,22 +153,25 @@ const Home = async () => {
 
           <div className="mt-5 space-y-3 md:space-y-4">
             {lowStockBooks.map((book) => (
-              <div
+              <Link
                 key={book.id}
-                className="flex flex-col items-start gap-3 rounded-xl border border-[#9ac5ee] bg-[#f2f8ff] px-4 py-3 md:flex-row md:items-center md:justify-between"
+                href={`/all-books/${book.id}`}
+                className="block"
               >
-                <div>
-                  <p className="text-sm font-semibold text-[#0f3d66] md:text-base">
-                    {book.title}
-                  </p>
-                  <p className="text-xs text-[#1f5d99] md:text-sm">
-                    {book.author}
-                  </p>
+                <div className="flex flex-col items-start gap-3 rounded-xl border border-[#9ac5ee] bg-[#f2f8ff] px-4 py-3 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-[#0f3d66] md:text-base">
+                      {book.title}
+                    </p>
+                    <p className="text-xs text-[#1f5d99] md:text-sm">
+                      {book.author}
+                    </p>
+                  </div>
+                  <div className="shrink-0 rounded-full border border-[#1f5d99] px-3 py-1 text-xs font-semibold text-[#1f5d99] md:text-sm">
+                    {book.available_quantity} left
+                  </div>
                 </div>
-                <div className="shrink-0 rounded-full border border-[#1f5d99] px-3 py-1 text-xs font-semibold text-[#1f5d99] md:text-sm">
-                  {book.available_quantity} left
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
