@@ -1,7 +1,13 @@
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
-const SignInButton = () => {
+const SignInButton = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(), // you need to pass the headers object.
+  });
+
   return (
     <div className="flex flex-wrap items-center justify-end gap-2 md:gap-3">
       <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-[#93c5fd]">
