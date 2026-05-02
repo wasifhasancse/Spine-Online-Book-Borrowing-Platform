@@ -1,3 +1,4 @@
+import BorrowButton from "@/components/Book/BorrowButton";
 import { galleryData } from "@/localdb/localdb";
 import Image from "next/image";
 
@@ -87,9 +88,7 @@ const BookDetails = async ({ params }) => {
               </div>
 
               <div className="mt-6 flex flex-col gap-3 md:mt-8 md:flex-col lg:flex-row lg:items-center">
-                <button className="inline-flex items-center justify-center rounded-xl bg-[#1f5d99] px-5 py-3 text-sm font-semibold text-[#eaf4ff] transition hover:bg-[#0f3d66] active:bg-[#0b2d4d] md:px-6 md:text-base">
-                  Borrow This Book
-                </button>
+                <BorrowButton/>
                 <button className="inline-flex items-center justify-center rounded-xl border border-[#1f5d99] bg-transparent px-5 py-3 text-sm font-semibold text-[#1f5d99] transition hover:bg-[#93c5fd33] hover:text-[#0f3d66] active:bg-[#1f5d99] active:text-[#eaf4ff] md:px-6 md:text-base">
                   Add To Wishlist
                 </button>

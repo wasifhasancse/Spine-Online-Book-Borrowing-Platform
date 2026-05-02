@@ -4,7 +4,7 @@ import { GiBookCover } from "react-icons/gi";
 import { IoBook, IoHomeSharp } from "react-icons/io5";
 import Hamburger from "./Hamburger";
 import NavLink from "./NavLink";
-import SignInButton from "./SignInButton";
+import GetUserAuth from "./GetUserAuth";
 
 const navLinks = [
   { label: "Home", href: "/", icon: <IoHomeSharp /> },
@@ -27,14 +27,14 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-2.5 md:flex">
           {navLinks.map((navItems, index) => (
             <NavLink key={index} navItems={navItems} />
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
-          <SignInButton />
+          <GetUserAuth/>
         </div>
       </div>
     </nav>

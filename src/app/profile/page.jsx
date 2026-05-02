@@ -1,6 +1,13 @@
 import Image from "next/image";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
-const page = () => {
+
+const page = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(), 
+  });
+  console.log('session :>> ', session);
   return (
     <div className="mx-auto max-w-10/12 flex min-h-screen flex-col items-center justify-center space-y-10 py-14">
       <div className="relative h-30 w-30 overflow-hidden rounded-full ring-2 ring-[#93c5fd]">

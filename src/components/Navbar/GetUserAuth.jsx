@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const SignInButton = () => {
+const GetUserAuth = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const userData = authClient.useSession();
   const isSignedIn = Boolean(userData?.data?.session);
@@ -70,4 +70,4 @@ const SignInButton = () => {
   );
 };
 
-export default SignInButton;
+export default GetUserAuth;

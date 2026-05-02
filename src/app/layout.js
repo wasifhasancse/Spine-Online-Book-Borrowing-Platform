@@ -1,8 +1,11 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import { ToastProvider } from "@heroui/react";
+// import Provider from "@/provider/ToastProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import Provider from "@/provider/ToastProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +30,12 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-linear-to-r from-[#e6f4ff] to-[#c7e3ff] text-[#0f3d66] ">
-        <Navbar />
-        <main>{children}</main>
-        <ToastProvider placement="top-end" />
-        <Footer />
+        {/* <Provider> */}
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ToastContainer />
+        {/* </Provider> */}
       </body>
     </html>
   );

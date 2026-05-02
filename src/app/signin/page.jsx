@@ -7,13 +7,16 @@ import {
   Form,
   Input,
   Label,
-  TextField, toast
+  TextField
 } from "@heroui/react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 export default function SignIn() {
   const onSubmit = async (e) => {
     e.preventDefault();
+   toast.error('react error')
+    console.log('ss');
     const formData = new FormData(e.target);
     const email = formData.get("email");
     const password = formData.get("password");
@@ -25,7 +28,6 @@ export default function SignIn() {
     });
 
     if (error) {
-      alert("Sign in failed: " + error.message);
       toast.danger("Sign in failed: " + error.message);
     }
   };
