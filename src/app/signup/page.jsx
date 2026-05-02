@@ -11,6 +11,7 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function SignUp() {
   const onSubmit = async (e) => {
@@ -28,7 +29,9 @@ export default function SignUp() {
       image: image,
       callbackURL: "/",
     });
-    console.log("signUp", { data, error });
+    if (data) {
+      redirect("/signin");
+    }
   };
 
   const handleGoogleSignIn = async () => {

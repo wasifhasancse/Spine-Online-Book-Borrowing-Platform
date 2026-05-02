@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import { ToastProvider } from "@heroui/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full bg-linear-to-r from-[#e6f4ff] to-[#c7e3ff] text-[#0f3d66] ">
         <Navbar />
         <main>{children}</main>
+        <ToastProvider placement="top-end" />
         <Footer />
       </body>
     </html>

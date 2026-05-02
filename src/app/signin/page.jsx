@@ -1,14 +1,13 @@
 "use client";
-
 import { authClient } from "@/lib/auth-client";
 import {
-    Button,
-    Description,
-    FieldError,
-    Form,
-    Input,
-    Label,
-    TextField,
+  Button,
+  Description,
+  FieldError,
+  Form,
+  Input,
+  Label,
+  TextField, toast
 } from "@heroui/react";
 import Link from "next/link";
 
@@ -24,6 +23,11 @@ export default function SignIn() {
       password,
       callbackURL: "/",
     });
+
+    if (error) {
+      alert("Sign in failed: " + error.message);
+      toast.danger("Sign in failed: " + error.message);
+    }
   };
 
   const handleGoogleSignIn = async () => {
@@ -31,27 +35,6 @@ export default function SignIn() {
       provider: "google",
       callbackURL: "/",
     });
-  };
-
-  const handleForgotPassword = async () => {
-    const emailInput = document.querySelector('input[name="email"]');
-    const email = emailInput?.value?.trim();
-
-    if (!email) {
-      alert("Please enter your email first, then click Forgot Password.");
-      return;
-    }
-
-    const { data, error } = await authClient.requestPasswordReset({
-      email,
-      redirectTo: "/signin",
-    });
-
-    console.log("requestPasswordReset", { data, error });
-
-    if (!error) {
-      alert("Password reset link sent. Please check your email.");
-    }
   };
 
   return (
@@ -176,15 +159,12 @@ export default function SignIn() {
                 <FieldError />
               </TextField>
 
-              <Link href="/forgot-password" className="self-start">
-                <button
+              <button
                 type="button"
-                onClick={handleForgotPassword}
-                className="self-start text-sm font-semibold text-[#1f5d99] underline decoration-[#1f5d9940] underline-offset-4 transition hover:text-[#0f3d66]"
+                className="self-start text-sm font-semibold text-[#1f5d99] decoration-[#1f5d9940] hover:underline underline-offset-4 transition hover:text-[#0f3d66]"
               >
                 Forgot Password?
               </button>
-              </Link>
 
               <Button
                 type="submit"
