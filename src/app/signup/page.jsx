@@ -3,7 +3,6 @@ import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
-  Card,
   Description,
   FieldError,
   Form,
@@ -28,80 +27,151 @@ export default function SignUp() {
       image: image,
       callbackURL: "/",
     });
-    console.log('signUp', {data, error});
+    console.log("signUp", { data, error });
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+    <section className="mx-auto w-full max-w-10/12 py-8 md:py-12 lg:py-14">
+      <div className="relative overflow-hidden rounded-3xl border border-[#9ac5ee] bg-[#f8fbff]/90 shadow-xl shadow-[#1f5d9920]">
+        <div className="absolute left-0 top-0 -z-10 h-full w-full bg-linear-to-br from-[#eff7ff] via-[#e4f2ff] to-[#d8ebff]" />
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
+          <div className="relative border-b border-[#c6def7] p-6 md:p-8 lg:border-b-0 lg:border-r lg:border-[#c6def7] lg:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#0f3d66] md:text-sm">
+              Join Spine Library
+            </p>
+            <h1 className="mt-3 text-3xl font-extrabold leading-tight text-[#1f5d99] md:text-4xl lg:text-5xl">
+              Create Your Account
+            </h1>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#1a4f80] md:text-base">
+              Build your profile to borrow books, manage your reading list, and
+              get alerts for new arrivals that match your interests.
+            </p>
 
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
+            <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-[#b8d8f6] bg-[#ffffffb0] px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1f5d99]">
+                  Fast Access
+                </p>
+                <p className="mt-1 text-sm text-[#0f3d66]">
+                  One-click borrowing dashboard
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[#b8d8f6] bg-[#ffffffb0] px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1f5d99]">
+                  Smart Alerts
+                </p>
+                <p className="mt-1 text-sm text-[#0f3d66]">
+                  Get low stock & return reminders
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[#b8d8f6] bg-[#ffffffb0] px-4 py-3 sm:col-span-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1f5d99]">
+                  Member Perks
+                </p>
+                <p className="mt-1 text-sm text-[#0f3d66]">
+                  Discover top picks, save favorites, and track your progress in
+                  one place.
+                </p>
+              </div>
+            </div>
 
-        <TextField
-          isRequired
-          name="email"
-          type="email"
-          validate={(value) => {
-            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
-            }
+            <p className="mt-7 text-sm text-[#1a4f80]">
+              Already have an account? Use the Sign In option from the top
+              navigation.
+            </p>
+          </div>
 
-            return null;
-          }}
-        >
-          <Label>Email</Label>
-          <Input placeholder="john@example.com" />
-          <FieldError />
-        </TextField>
+          <div className="p-6 md:p-8 lg:p-10">
+            <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
+              <TextField isRequired name="name" type="text">
+                <Label className="text-[#0f3d66]">Name</Label>
+                <Input
+                  placeholder="Enter your full name"
+                  className="rounded-xl border border-[#9ac5ee] bg-[#edf5ff]"
+                />
+                <FieldError />
+              </TextField>
 
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
+              <TextField isRequired name="image" type="text">
+                <Label className="text-[#0f3d66]">Image URL</Label>
+                <Input
+                  placeholder="https://example.com/profile.jpg"
+                  className="rounded-xl border border-[#9ac5ee] bg-[#edf5ff]"
+                />
+                <FieldError />
+              </TextField>
 
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
-          <FieldError />
-        </TextField>
+              <TextField
+                isRequired
+                name="email"
+                type="email"
+                validate={(value) => {
+                  if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                    return "Please enter a valid email address";
+                  }
 
-        <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+                  return null;
+                }}
+              >
+                <Label className="text-[#0f3d66]">Email</Label>
+                <Input
+                  placeholder="you@example.com"
+                  className="rounded-xl border border-[#9ac5ee] bg-[#edf5ff]"
+                />
+                <FieldError />
+              </TextField>
+
+              <TextField
+                isRequired
+                minLength={8}
+                name="password"
+                type="password"
+                validate={(value) => {
+                  if (value.length < 8) {
+                    return "Password must be at least 8 characters";
+                  }
+                  if (!/[A-Z]/.test(value)) {
+                    return "Password must contain at least one uppercase letter";
+                  }
+                  if (!/[0-9]/.test(value)) {
+                    return "Password must contain at least one number";
+                  }
+
+                  return null;
+                }}
+              >
+                <Label className="text-[#0f3d66]">Password</Label>
+                <Input
+                  placeholder="Create a secure password"
+                  className="rounded-xl border border-[#9ac5ee] bg-[#edf5ff]"
+                />
+                <Description className="text-[#1f5d99]">
+                  Must be at least 8 characters with 1 uppercase and 1 number
+                </Description>
+                <FieldError />
+              </TextField>
+
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                <Button
+                  type="submit"
+                  className="h-11 w-full rounded-xl bg-[#1f5d99] text-sm font-bold text-[#eaf4ff] hover:bg-[#0f3d66] md:h-12"
+                >
+                  <Check />
+                  Create Account
+                </Button>
+                <Button
+                  type="reset"
+                  variant="bordered"
+                  className="h-11 w-full rounded-xl border-[#1f5d99] bg-transparent font-semibold text-[#1f5d99] hover:bg-[#93c5fd33] hover:text-[#0f3d66] md:h-12"
+                >
+                  Reset
+                </Button>
+              </div>
+            </Form>
+          </div>
         </div>
-      </Form>
-    </Card>
+      </div>
+    </section>
   );
 }
