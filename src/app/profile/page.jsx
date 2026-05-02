@@ -63,11 +63,11 @@ const page = async () => {
               </div>
             </div>
             <div>
-              {/* <UpdateUserData
-                defaultName={user.name || ""}
-                defaultImage={profileImage}
+              <UpdateUserData
+                name={user.name || ""}
+                image={profileImage}
                 email={user.email || ""}
-              /> */}
+              />
             </div>
           </aside>
 
