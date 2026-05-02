@@ -14,9 +14,7 @@ const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
     const formData = new FormData(event.target);
     const getUpdateData = Object.fromEntries(formData.entries());
 
-    try {
       setIsSaving(true);
-
       const { error } = await authClient.updateUser({
         image: getUpdateData.image,
         name: getUpdateData.name,
@@ -26,11 +24,8 @@ const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
         toast.error(error.message || "Failed to update profile");
         return;
       }
-
       toast.success("Profile updated successfully");
-    } finally {
       setIsSaving(false);
-    }
   };
 
   return (

@@ -89,7 +89,7 @@ const BookDetails = async ({ params }) => {
 
               <div className="mt-6 flex flex-col gap-3 md:mt-8 md:flex-col lg:flex-row lg:items-center">
                 <BorrowButton/>
-                <button className="inline-flex items-center justify-center rounded-xl border border-[#1f5d99] bg-transparent px-5 py-3 text-sm font-semibold text-[#1f5d99] transition hover:bg-[#93c5fd33] hover:text-[#0f3d66] active:bg-[#1f5d99] active:text-[#eaf4ff] md:px-6 md:text-base">
+                <button className="inline-flex items-center justify-center rounded-xl border border-[#1f5d99] bg-transparent px-5 py-3 text-sm font-semibold text-[#1f5d99] transition hover:bg-[#93c5fd33] hover:text-[#0f3d66] active:bg-[#1f5d99] active:text-[#eaf4ff] md:px-6 md:text-base cursor-pointer">
                   Add To Wishlist
                 </button>
               </div>

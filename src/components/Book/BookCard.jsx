@@ -2,6 +2,7 @@ import { CircleFill } from "@gravity-ui/icons";
 import { Chip } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaStar } from "react-icons/fa";
 
 const BookCard = ({ book }) => {
   const {
@@ -16,7 +17,7 @@ const BookCard = ({ book }) => {
   } = book;
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-[#7ab8ee] bg-linear-to-b from-[#f8fbff] to-[#eaf4ff] shadow-md shadow-[#1f5d991f] transition-all duration-300 hover:-translate-y-1 hover:border-[#1f5d99] hover:shadow-xl hover:shadow-[#1f5d9933]">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-[#7ab8ee] bg-linear-to-b from-[#f8fbff] to-[#eaf4ff] shadow-md shadow-[#1f5d991f] transition-all duration-300 hover:-translate-y-1 hover:border-[#1f5d99] hover:shadow-xl hover:shadow-[#1f5d9933]">
       <div className="pointer-events-none absolute left-0 top-0 z-10 h-1 w-full bg-linear-to-r from-[#60a5fa] via-[#1f5d99] to-[#60a5fa] opacity-65" />
 
       <div className="relative h-52 overflow-hidden bg-[#dceeff] md:h-56 lg:h-60">
@@ -48,8 +49,8 @@ const BookCard = ({ book }) => {
           <p className="min-w-0 truncate text-[#1a4f80]">
             by <span className="font-semibold text-[#0f3d66]">{author}</span>
           </p>
-          <span className="shrink-0 rounded-full border border-[#7ab8ee] bg-white/80 px-2.5 py-1 font-semibold text-[#0f3d66]">
-            {rating} / 5
+          <span className="shrink-0 flex items-center justify-center gap-1.5 rounded-full border border-[#7ab8ee] bg-white/80 px-2.5 py-1 font-semibold text-[#0f3d66]">
+            <FaStar /> {rating}
           </span>
         </div>
 
@@ -74,7 +75,7 @@ const BookCard = ({ book }) => {
           </Link>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 

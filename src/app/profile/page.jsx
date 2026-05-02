@@ -3,7 +3,6 @@ import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import UpdateProfile from "../update-profile/page";
 import { PencilToSquare } from "@gravity-ui/icons";
 
 const page = async () => {
@@ -16,9 +15,9 @@ const page = async () => {
   }
 
   const user = session.user;
-  const memberSinceRaw = session?.session?.createdAt || user?.createdAt;
-  const memberSince = memberSinceRaw
-    ? new Date(memberSinceRaw).toLocaleDateString("en-US", {
+  const memberSinceDate = session?.session?.createdAt || user?.createdAt;
+  const memberSince = memberSinceDate
+    ? new Date(memberSinceDate).toLocaleDateString("en-US", {
         month: "long",
         year: "numeric",
       })

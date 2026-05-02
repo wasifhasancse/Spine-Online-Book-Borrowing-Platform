@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[#9ac5ee] bg-[#dbedff]/85 backdrop-blur-md">
       <div className="mx-auto h-16 max-w-11/12 flex items-center justify-between">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-5">
           <Hamburger navLinks={navLinks} className="md:hidden" />
           <Link
             href="/"

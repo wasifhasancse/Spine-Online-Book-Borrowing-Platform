@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import NavLink from "./NavLink";
@@ -25,7 +24,7 @@ const Hamburger = ({ navLinks }) => {
         }`}
       >
         <div className="h-1 w-full rounded-t-xl" />
-        <ul className="flex flex-col gap-1 p-2">
+        <ul className="flex flex-col gap-2.5 p-2">
           {navLinks.map((navItems, index) => (
             <NavLink
               key={index}
