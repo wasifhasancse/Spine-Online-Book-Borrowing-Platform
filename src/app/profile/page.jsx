@@ -1,9 +1,10 @@
-import UpdateUserData from "@/components/Profile/UpdateUserData";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import UpdateProfile from "../update-profile/page";
+import { PencilToSquare } from "@gravity-ui/icons";
 
 const page = async () => {
   const session = await auth.api.getSession({
@@ -63,11 +64,10 @@ const page = async () => {
               </div>
             </div>
             <div>
-              <UpdateUserData
-                name={user.name || ""}
-                image={profileImage}
-                email={user.email || ""}
-              />
+              <Link href={'/update-profile'} className="mt-5 h-11 w-full flex items-center justify-center gap-1.5 rounded-xl border-[#1f5d99] bg-transparent font-semibold text-[#1f5d99] transition hover:bg-[#93c5fd33] hover:text-[#0f3d66]">
+                <PencilToSquare className="size-4" />
+                Edit Profile
+              </Link>
             </div>
           </aside>
 

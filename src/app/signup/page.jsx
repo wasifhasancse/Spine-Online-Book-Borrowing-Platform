@@ -9,6 +9,7 @@ import {
   Input,
   Label,
   TextField,
+  toast,
 } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -29,8 +30,13 @@ export default function SignUp() {
       image: image,
       callbackURL: "/",
     });
+    console.log({data,error});
     if (data) {
       redirect("/signin");
+    }
+    if (error) {
+      alert('error')
+      toast('error')
     }
   };
 

@@ -1,38 +1,23 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { PencilToSquare } from "@gravity-ui/icons";
-import { Button, Input, Label, Surface, TextField } from "@heroui/react";
+import { Button, Input, Label, Surface, TextField, toast } from "@heroui/react";
 import { useState } from "react";
-import { toast } from "react-toastify";
 
-const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
+const UpdateProfile = () => {
   const [isSaving, setIsSaving] = useState(false);
-
   const onSubmit = async (event) => {
     event.preventDefault();
-
     const formData = new FormData(event.target);
     const getUpdateData = Object.fromEntries(formData.entries());
 
-    try {
-      setIsSaving(true);
-
-      const { error } = await authClient.updateUser({
-        image: getUpdateData.image,
-        name: getUpdateData.name,
-      });
-
-      if (error) {
-        toast.error(error.message || "Failed to update profile");
-        return;
-      }
-
-      toast.success("Profile updated successfully");
-    } finally {
-      setIsSaving(false);
-    }
+    await authClient.updateUser({
+      image: getUpdateData.image,
+      name: getUpdateData.name,
+    });
+    setIsSaving(true);
+    toast.success("Profile updated successfully");
   };
-
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6 lg:px-0">
       <Surface
@@ -53,12 +38,7 @@ const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
         </div>
 
         <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:gap-5">
-          <TextField
-            className="w-full"
-            name="name"
-            type="text"
-            defaultValue={defaultName}
-          >
+          <TextField className="w-full" name="name" type="text">
             <Label className="text-[#0f3d66]">Full Name</Label>
             <Input
               placeholder="Enter your full name"
@@ -66,12 +46,7 @@ const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
             />
           </TextField>
 
-          <TextField
-            className="w-full"
-            name="image"
-            type="url"
-            defaultValue={defaultImage}
-          >
+          <TextField className="w-full" name="image" type="url">
             <Label className="text-[#0f3d66]">Profile Image URL</Label>
             <Input
               placeholder="https://example.com/profile.jpg"
@@ -105,4 +80,4 @@ const UpdateUserData = ({ defaultName = "", defaultImage = "" }) => {
   );
 };
 
-export default UpdateUserData;
+export default UpdateProfile;
