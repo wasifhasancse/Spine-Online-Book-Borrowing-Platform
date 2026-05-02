@@ -15,8 +15,6 @@ import { toast } from "react-toastify";
 export default function SignIn() {
   const onSubmit = async (e) => {
     e.preventDefault();
-   toast.error('react error')
-    console.log('ss');
     const formData = new FormData(e.target);
     const email = formData.get("email");
     const password = formData.get("password");
@@ -28,7 +26,7 @@ export default function SignIn() {
     });
 
     if (error) {
-      toast.danger("Sign in failed: " + error.message);
+      toast.error("Sign in failed: " + error.message)
     }
   };
 
