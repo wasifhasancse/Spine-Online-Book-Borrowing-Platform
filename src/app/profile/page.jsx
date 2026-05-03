@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { PencilToSquare } from "@gravity-ui/icons";
+import { format } from "date-fns";
 
 const page = async () => {
   const session = await auth.api.getSession({
@@ -16,11 +17,9 @@ const page = async () => {
 
   const user = session.user;
   const memberSinceDate = session?.session?.createdAt || user?.createdAt;
+  console.log(memberSinceDate);
   const memberSince = memberSinceDate
-    ? new Date(memberSinceDate).toLocaleDateString("en-US", {
-        month: "long",
-        year: "numeric",
-      })
+    ? format(new Date(memberSinceDate), "MMMM yyyy")
     : "Recently joined";
 
   const profileImage =
