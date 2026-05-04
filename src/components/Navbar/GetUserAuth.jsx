@@ -3,15 +3,18 @@ import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FaUserAlt } from "react-icons/fa";
 
 const GetUserAuth = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const userData = authClient.useSession();
-  const isSignedIn = Boolean(userData?.data?.session);
+  const { data: userData, isPending } = authClient.useSession();
+  const isSignedIn = Boolean(userData?.session);
 
   return (
     <>
-      {!isSignedIn ? (
+      {isPending ? (
+        <div className="mx-auto h-10 w-10 rounded-full border-4 border-[#9ac5ee] border-t-[#0f3d66] animate-spin" />
+      ) : !isSignedIn ? (
         <Link
           href="/signin"
           className="rounded-md bg-[#1f5d99] px-3 py-2 text-sm text-[#eaf4ff] transition duration-300 hover:bg-[#0f3d66] active:bg-[#0b2d4d] md:px-4 md:text-base"
@@ -26,7 +29,7 @@ const GetUserAuth = () => {
           >
             <Image
               src={
-                userData?.data?.user?.image ||
+                userData?.user?.image ||
                 "https://img.icons8.com/color/1200/user.jpg"
               }
               alt="User avatar"
@@ -43,9 +46,10 @@ const GetUserAuth = () => {
                 : "scale-95 opacity-0 pointer-events-none"
             }`}
           >
-            <div className="mb-2 rounded-xl border border-[#c4def6] bg-linear-to-r from-[#edf6ff] via-[#e8f3ff] to-[#dceeff] px-3 py-2">
+            <div className="mb-2 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-linear-to-r from-[#edf6ff] via-[#e8f3ff] to-[#dceeff] px-3 py-5">
+              <FaUserAlt />
               <p className="truncate text-sm font-bold text-[#0f3d66] text-center">
-                {userData?.data?.user?.name}
+                {userData?.user?.name}
               </p>
             </div>
             <ul className="flex flex-col gap-2 p-1">
