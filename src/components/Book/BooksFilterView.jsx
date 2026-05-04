@@ -111,14 +111,14 @@ const BooksFilterView = ({ booksData, categoriesData }) => {
               <div className="flex flex-col items-center justify-center rounded-2xl border border-[#9ac5ee] bg-[#edf5ff] px-8 py-16 text-center">
                 <GoBook className="mb-5 h-16 w-16 text-[#9ac5ee]" />
                 <h3 className="mb-2 text-xl font-bold text-[#0f3d66]">
-                  No books found
+                  No matching books yet
                 </h3>
                 <p className="mb-6 max-w-sm text-sm text-[#1f5d99]">
                   {getSearchValue && selectedCategory !== "All"
-                    ? `No results for "${searchValue}" in ${selectedCategory}.`
+                    ? `We could not find "${searchValue}" in ${selectedCategory}. Try another keyword or choose a different category.`
                     : getSearchValue
-                      ? `No results for "${searchValue}". Try a different title or keyword.`
-                      : `No books available in the "${selectedCategory}" category yet.`}
+                      ? `No titles match "${searchValue}" right now. Try a shorter keyword or check spelling.`
+                      : `There are no books in "${selectedCategory}" right now. Please check back soon or view all categories.`}
                 </p>
                 <button
                   type="button"
@@ -128,7 +128,7 @@ const BooksFilterView = ({ booksData, categoriesData }) => {
                   }}
                   className="rounded-lg bg-[#1f5d99] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#0f3d66]"
                 >
-                  Clear filters
+                  Reset search and filters
                 </button>
               </div>
             ) : (

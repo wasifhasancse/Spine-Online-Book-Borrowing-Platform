@@ -1,6 +1,9 @@
 import BorrowButton from "@/components/Book/BorrowButton";
 import { galleryData } from "@/localdb/localdb";
 import Image from "next/image";
+import Link from "next/link";
+import { FaArrowLeft, FaBookOpen } from "react-icons/fa";
+import { TbCloudDataConnectionFilled} from "react-icons/tb";
 
 const BookDetails = async ({ params }) => {
   const { id } = await params;
@@ -10,16 +13,50 @@ const BookDetails = async ({ params }) => {
   return (
     <>
       {!book ? (
-        <div className="mx-auto max-w-10/12 flex min-h-screen items-center justify-center px-4 py-8 md:px-6 md:py-10 lg:px-8 lg:py-12">
-          <div className="w-full max-w-xl rounded-3xl border border-[#9ac5ee] bg-[#edf5ff] p-6 text-center shadow-md md:p-8 lg:p-10">
-            <h1 className="text-2xl font-bold text-[#0f3d66] md:text-3xl lg:text-4xl">
-              Book not found
-            </h1>
-            <p className="mt-3 text-[#1f5d99] md:text-lg">
-              The requested book could not be loaded right now.
-            </p>
-          </div>
-        </div>
+         <section className="relative mx-auto flex min-h-[calc(100vh-170px)] w-full items-center justify-center overflow-hidden px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+              <div className="pointer-events-none absolute inset-0 -z-10">
+                <div className="absolute -left-20 top-8 h-48 w-48 rounded-full bg-[#8ec7f833] blur-2xl sm:h-64 sm:w-64" />
+                <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-[#1f5d9929] blur-2xl sm:h-72 sm:w-72" />
+              </div>
+
+              <div className="w-full max-w-3xl rounded-3xl border border-[#7ab8ee]/60 bg-white/85 p-6 text-center shadow-[0_20px_50px_-20px_rgba(31,93,153,0.45)] backdrop-blur-sm sm:p-8 md:p-10">
+                <p className="inline-flex items-center gap-2 rounded-full border border-[#7ab8ee]/70 bg-[#e6f4ff] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.26em] text-[#0f3d66] sm:text-xs">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#1f5d99]" />
+                  Page Missing
+                </p>
+
+                <div className="mx-auto mt-6 flex h-16 w-16 items-center justify-center text-[#0f3d66] text-3xl sm:h-20 sm:w-20 sm:text-4xl">
+                  <TbCloudDataConnectionFilled className="text-9xl"/>
+                </div>
+
+                <h2 className="mt-5 text-xl font-bold text-[#1f5d99] sm:text-2xl md:text-3xl">
+                 Book Not Found!
+                </h2>
+
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#356b99] sm:text-base md:text-lg">
+                  The Book you are looking for may have been moved, removed, or never
+                  existed. Let us get you back to books you can actually borrow.
+                </p>
+
+                <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+                  <Link
+                    href="/"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f3d66] px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#154b7a] sm:text-base"
+                  >
+                    <FaArrowLeft className="text-sm" />
+                    Back To Home
+                  </Link>
+
+                  <Link
+                    href="/all-books"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#7ab8ee] bg-white px-6 py-3 text-sm font-bold text-[#0f3d66] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#eaf4ff] sm:text-base"
+                  >
+                    <FaBookOpen className="text-sm" />
+                    Browse Books
+                  </Link>
+                </div>
+              </div>
+            </section>
       ) : (
         <section className="mx-auto max-w-10/12 relative min-h-screen my-5 px-3 py-8 md:px-4 md:py-10 lg:px-6 lg:py-14">
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-[#9ac5ee] bg-[#edf5ff]/95 p-3 shadow-lg shadow-[#1f5d9920] md:gap-6 md:rounded-3xl md:p-5 lg:grid-cols-2 lg:gap-10 lg:p-8">
