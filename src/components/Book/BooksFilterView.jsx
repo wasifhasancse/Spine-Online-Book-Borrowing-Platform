@@ -64,8 +64,8 @@ const BooksFilterView = ({ booksData, categoriesData }) => {
           </select>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="hidden md:block w-64 mr-6">
+        <div className="flex flex-col md:flex-row gap-2.5">
+          <div className="hidden md:block w-36 lg:w-40 mr-2">
             <h2 className="mb-4 text-lg font-bold text-[#0f3d66]">
               Categories
             </h2>
@@ -132,7 +132,7 @@ const BooksFilterView = ({ booksData, categoriesData }) => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2.5 lg:gap-4">
                 {filteredBooks.map((book) => (
                   <BookCard key={book.id} book={book} />
                 ))}
