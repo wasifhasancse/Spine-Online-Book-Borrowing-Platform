@@ -1,18 +1,29 @@
 "use client";
+import { DataContext } from "@/context/BookCartContext";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "@heroui/react";
 import { redirect } from "next/navigation";
+import { useContext } from "react";
 
-const BorrowButton = () => {
+const BorrowButton = ({ book }) => {
+  const { cartItems, setCartItems } = useContext(DataContext);
   const userData = authClient.useSession();
   const manageBorrow = () => {
     if (!userData) {
       redirect("/signin");
     }
     if (userData?.data?.session) {
-
-      toast.success("Book borrowed successfully!")
-  }
+      const isExist = cartItems.find((item) => item.id === book.id);
+      if (isExist) {
+        const updatedCart = cartItems.map((item) =>
+          item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item,
+        );
+        setCartItems(updatedCart);
+      } else {
+        setCartItems([...cartItems, { ...book, quantity: 1 }]);
+      }
+      toast.success("Book borrowed successfully!");
+    }
   };
   return (
     <button

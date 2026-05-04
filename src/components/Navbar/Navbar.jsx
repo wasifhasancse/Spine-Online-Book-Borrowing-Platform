@@ -2,9 +2,10 @@ import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { GiBookCover } from "react-icons/gi";
 import { IoBook, IoHomeSharp } from "react-icons/io5";
+import GetUserAuth from "./GetUserAuth";
 import Hamburger from "./Hamburger";
 import NavLink from "./NavLink";
-import GetUserAuth from "./GetUserAuth";
+import ProductCart from "./ProductCart";
 
 const navLinks = [
   { label: "Home", href: "/", icon: <IoHomeSharp /> },
@@ -33,8 +34,9 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <GetUserAuth/>
+        <div className="flex items-center gap-5">
+          <ProductCart />
+          <GetUserAuth />
         </div>
       </div>
     </nav>
