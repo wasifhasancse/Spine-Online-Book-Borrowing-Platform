@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import { PencilToSquare } from "@gravity-ui/icons";
 import { Button, Input, Label, Surface, TextField, toast } from "@heroui/react";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 const UpdateProfile = () => {
@@ -17,6 +18,7 @@ const UpdateProfile = () => {
     });
     setIsSaving(true);
     toast.success("Profile updated successfully");
+    redirect("/profile");
   };
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6 lg:px-0">
