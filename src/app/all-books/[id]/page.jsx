@@ -60,7 +60,7 @@ const BookDetails = async ({ params }) => {
       ) : (
         <section className="mx-auto max-w-10/12 relative min-h-screen my-5 px-3 py-8 md:px-4 md:py-10 lg:px-6 lg:py-14">
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-5 overflow-hidden rounded-2xl border border-[#9ac5ee] bg-[#edf5ff]/95 p-3 shadow-lg shadow-[#1f5d9920] md:gap-6 md:rounded-3xl md:p-5 lg:grid-cols-2 lg:gap-10 lg:p-8">
-            <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-[#9ac5ee] bg-[#dceeff] p-3 md:p-4 lg:max-w-sm">
+            <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-[#9ac5ee] bg-[#dceeff] p-3 md:p-4 lg:max-w-sm">
               <div className="absolute right-3 top-3 rounded-full border border-[#93c5fd] bg-[#eaf4ff] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#0f3d66]">
                 {book.category}
               </div>

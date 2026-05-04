@@ -40,7 +40,7 @@ const GetUserAuth = () => {
           </div>
 
           <div
-            className={`absolute -right-8 top-11 mt-2 w-60 origin-top rounded-2xl border border-[#a7cdf2] bg-[#f8fbff] p-2 shadow-xl shadow-[#1f5d9930] ring-1 ring-[#1f5d991f] transition-all duration-200 ${
+            className={`absolute right-0 top-12 mt-2 w-60 origin-top rounded-2xl border border-[#a7cdf2] bg-[#f8fbff] p-2 shadow-xl shadow-[#1f5d9930] ring-1 ring-[#1f5d991f] transition-all duration-200 ${
               menuOpen
                 ? "scale-100 opacity-100 pointer-events-auto"
                 : "scale-95 opacity-0 pointer-events-none"
