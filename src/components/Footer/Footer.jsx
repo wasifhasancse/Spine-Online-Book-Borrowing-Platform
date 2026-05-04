@@ -115,7 +115,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-2 gap-x-10 md:col-span-2">
+            <div className="flex flex-col gap-4">
             <div className="space-y-1">
               <h3 className="text-base font-bold text-[#0f3d66]">Product</h3>
               <div className="h-0.5 w-8 rounded-full bg-[#1f5d99]" />
@@ -153,6 +154,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
           </div>
         </div>
 
