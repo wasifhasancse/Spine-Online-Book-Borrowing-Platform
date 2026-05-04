@@ -12,11 +12,17 @@ const ProductCart = () => {
     <>
       {
         <div className="relative">
+          {/* add item length in the top right side of cart icon */}
           <div
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="relative h-8 w-8 cursor-pointer overflow-hidden transition hover:scale-[1.03]"
+            className="relative h-8 w-8 cursor-pointer transition hover:scale-[1.03]"
           >
             <LiaOpencart className="w-full h-full" />
+            {cartItems.length > 0 && (
+              <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#60a5fa] text-xs font-semibold text-[#eaf4ff]">
+                {cartItems.length}
+              </div>
+            )}
           </div>
 
           <div
