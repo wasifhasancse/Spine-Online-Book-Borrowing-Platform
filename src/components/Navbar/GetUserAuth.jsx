@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -10,6 +11,10 @@ const GetUserAuth = () => {
   const { data: userData, isPending } = authClient.useSession();
   const isSignedIn = Boolean(userData?.session);
 
+  const manageSignOut = () => {
+    toast.success("Signed out successfully, See you again!");
+    authClient.signOut()
+  }
   return (
     <>
       {isPending ? (
@@ -60,7 +65,7 @@ const GetUserAuth = () => {
                 Profile
               </Link>
               <Link
-                onClick={() => authClient.signOut()}
+                onClick={manageSignOut}
                 href="/signin"
                 className="rounded-xl bg-[#1f5d99] px-3 py-2 text-sm font-semibold text-[#eaf4ff] transition duration-300 hover:bg-[#0f3d66] active:bg-[#0b2d4d]"
               >
