@@ -6,8 +6,10 @@
     "description": "A classic novel of family, manners, and the changing relationship between Elizabeth Bennet and Mr. Darcy.",
     "category": "Story",
     "available_quantity": 8,
+    "price": 17.99,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
-    "rating": 4.7
+    "rating": 4.7,
+    "reviews": 1250
   },
   {
     "id": 2,
@@ -16,8 +18,10 @@
     "description": "A widely read software book focused on writing maintainable, readable, and professional code.",
     "category": "Tech",
     "available_quantity": 12,
+    "price": 34.5,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
-    "rating": 4.8
+    "rating": 4.8,
+    "reviews": 1250
   },
   {
     "id": 3,
@@ -26,8 +30,10 @@
     "description": "A philosophical story about a shepherd's journey to pursue purpose, meaning, and personal destiny.",
     "category": "Story",
     "available_quantity": 5,
+    "price": 14.25,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": 1250
   },
   {
     "id": 4,
@@ -36,8 +42,10 @@
     "description": "A practical guide to software craftsmanship, problem solving, and long-term technical growth.",
     "category": "Tech",
     "available_quantity": 9,
+    "price": 39.99,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
-    "rating": 4.9
+    "rating": 4.9,
+    "reviews": 1250
   },
   {
     "id": 5,
@@ -46,8 +54,10 @@
     "description": "An accessible exploration of cosmology, black holes, time, and the structure of the universe.",
     "category": "Science",
     "available_quantity": 7,
+    "price": 21.95,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
-    "rating": 4.6
+    "rating": 4.6,
+    "reviews": 1250
   },
   {
     "id": 6,
@@ -56,18 +66,22 @@
     "description": "A powerful story of justice, conscience, and growing up in the racially divided American South.",
     "category": "Story",
     "available_quantity": 6,
+    "price": 18.75,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
-    "rating": 4.9
+    "rating": 4.9,
+    "reviews": 1250
   },
   {
     "id": 7,
-    "title": "Beyond the Ocean Door",
+    "title": "Designing Data-Intensive Applications",
     "author": "Martin Kleppmann",
     "description": "A modern systems book about data architecture, distributed systems, reliability, and scalability.",
     "category": "Tech",
     "available_quantity": 10,
-    "image_url": "https://blog-cdn.reedsy.com/directories/gallery/248/large_65b0ae90317f7596d6f95bfdd6131398.jpg",
-    "rating": 4.8
+    "price": 42.2,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg",
+    "rating": 4.8,
+    "reviews": 1250
   },
   {
     "id": 8,
@@ -76,8 +90,10 @@
     "description": "A science classic that connects astronomy, evolution, history, and human curiosity in one broad narrative.",
     "category": "Science",
     "available_quantity": 11,
+    "price": 23.4,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
-    "rating": 4.8
+    "rating": 4.8,
+    "reviews": 1250
   },
   {
     "id": 9,
@@ -86,8 +102,10 @@
     "description": "A dramatic novel about friendship, guilt, exile, and redemption across decades of Afghan history.",
     "category": "Story",
     "available_quantity": 4,
+    "price": 16.35,
     "image_url": "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
-    "rating": 4.7
+    "rating": 4.7,
+    "reviews": 1250
   },
   {
     "id": 10,
@@ -96,8 +114,10 @@
     "description": "A landmark popular science book explaining evolution through the lens of genes and natural selection.",
     "category": "Science",
     "available_quantity": 13,
+    "price": 22.8,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780192860927-L.jpg",
-    "rating": 4.5
+    "rating": 4.5,
+    "reviews": 1250
   },
   {
     "id": 11,
@@ -106,8 +126,10 @@
     "description": "A foundational textbook covering algorithm design, analysis, and essential computer science techniques.",
     "category": "Tech",
     "available_quantity": 14,
+    "price": 49.9,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780262046305-L.jpg",
-    "rating": 4.7
+    "rating": 4.7,
+    "reviews": 1250
   },
   {
     "id": 12,
@@ -116,7 +138,105 @@
     "description": "A literary classic following Jane's moral and emotional journey toward independence and belonging.",
     "category": "Story",
     "available_quantity": 9,
+    "price": 15.6,
     "image_url": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
-    "rating": 4.6
+    "rating": 4.6,
+    "reviews": 1250
+  },
+  {
+    "id": 13,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "description": "A psychological mystery about a woman who stops speaking after a shocking crime and the therapist who investigates her silence.",
+    "category": "Mystery",
+    "available_quantity": 8,
+    "price": 19.45,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781250301697-L.jpg",
+    "rating": 4.4,
+    "reviews": 1250
+  },
+  {
+    "id": 14,
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "description": "A tense and twist-filled mystery about a missing wife, media pressure, and the hidden truths inside a marriage.",
+    "category": "Mystery",
+    "available_quantity": 10,
+    "price": 18.9,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg",
+    "rating": 4.3,
+    "reviews": 1250
+  },
+  {
+    "id": 15,
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "description": "A gripping investigative mystery involving a journalist, a hacker, and a decades-old disappearance in a wealthy family.",
+    "category": "Mystery",
+    "available_quantity": 7,
+    "price": 20.3,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780307454546-L.jpg",
+    "rating": 4.5,
+    "reviews": 1250
+  },
+  {
+    "id": 16,
+    "title": "In the Woods",
+    "author": "Tana French",
+    "description": "A literary mystery where a detective investigates a child murder tied to his own unresolved childhood trauma.",
+    "category": "Mystery",
+    "available_quantity": 5,
+    "price": 17.2,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780143113492-L.jpg",
+    "rating": 4.1,
+    "reviews": 1250
+  },
+  {
+    "id": 17,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "A global history of humankind exploring cognitive revolutions, empire, science, and the systems that shape civilizations.",
+    "category": "History",
+    "available_quantity": 11,
+    "price": 26.75,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+    "rating": 4.7,
+    "reviews": 1250
+  },
+  {
+    "id": 18,
+    "title": "Guns, Germs, and Steel",
+    "author": "Jared Diamond",
+    "description": "A historical analysis of geography, agriculture, and technology to explain why societies developed differently.",
+    "category": "History",
+    "available_quantity": 9,
+    "price": 24.1,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780393354324-L.jpg",
+    "rating": 4.4,
+    "reviews": 1250
+  },
+  {
+    "id": 19,
+    "title": "The Silk Roads",
+    "author": "Peter Frankopan",
+    "description": "A fresh retelling of world history centered around trade routes linking Asia, the Middle East, and Europe.",
+    "category": "History",
+    "available_quantity": 6,
+    "price": 25.35,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781101912379-L.jpg",
+    "rating": 4.3,
+    "reviews": 1250
+  },
+  {
+    "id": 20,
+    "title": "The Wright Brothers",
+    "author": "David McCullough",
+    "description": "A historical biography of the brothers whose persistence and engineering changed aviation forever.",
+    "category": "History",
+    "available_quantity": 8,
+    "price": 21.6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781476728742-L.jpg",
+    "rating": 4.5,
+    "reviews": 1250
   }
 ]

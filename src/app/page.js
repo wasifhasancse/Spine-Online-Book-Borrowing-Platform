@@ -41,7 +41,7 @@ const Home = async () => {
             and technology titles.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featuredBooks.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
@@ -61,7 +61,7 @@ const Home = async () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {popularBooks.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
