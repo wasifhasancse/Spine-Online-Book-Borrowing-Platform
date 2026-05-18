@@ -75,7 +75,7 @@ const page = async () => {
                 Dashboard
               </p>
               <h2 className="mt-2 text-2xl font-extrabold leading-tight text-[#1f5d99] sm:text-3xl lg:text-4xl">
-                Welcome back, {user.name?.split(" ")[0] || "Reader"}
+                Welcome back, {user.name?.split(" ")[0] || "Library Member"}
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#1a4f80] sm:text-base">
                 Keep your reading journey organized. Track borrowed books,

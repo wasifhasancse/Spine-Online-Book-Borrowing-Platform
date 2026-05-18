@@ -11,11 +11,15 @@ const UpdateProfile = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const getUpdateData = Object.fromEntries(formData.entries());
-
-    await authClient.updateUser({
-      image: getUpdateData.image,
-      name: getUpdateData.name,
-    });
+    // if the user doesn't update any field, we shouldn't call the update API
+    const updateInfo = {}
+    if(getUpdateData.name) {
+      updateInfo.name = getUpdateData.name
+    }
+    if(getUpdateData.image) {
+      updateInfo.image = getUpdateData.image
+    }
+    await authClient.updateUser(updateInfo);
     setIsSaving(true);
     toast.success("Profile updated successfully");
     redirect("/profile");
